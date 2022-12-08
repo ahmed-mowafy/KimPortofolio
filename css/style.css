@@ -210,10 +210,11 @@ header .container .links ul li a {
 }
 .about .container {
   display: flex;
-  flex-direction: column;
+ 
 }
 
 .about .container .info-text{
+  flex-direction: column;
   flex-basis: 50%;
 }
 /*--End about section*/
