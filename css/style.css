@@ -2,7 +2,7 @@
 :root {
   --main-color: #ff7e20;
   --secondary-color: #ffffff;
-  --section-padding: 60px;
+  --section-padding: 100px;
   --main-duration: 0.5s;
 }
 /* End Variables */
@@ -48,27 +48,31 @@ body {
 /* Start Components */
 .special-heading {
   color: var(--main-color);
-  font-size: 100px;
+  font-size: 80px;
   text-align: center;
   font-weight: 800;
   letter-spacing: -3px;
   margin: 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .special-heading {
     font-size: 60px;
   }
 }
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 50px;
+  }
+}
 .secondary-heading {
   color: var(--secondary-color);
-  font-size: 100px;
+  font-size: 2em;
   font-weight: 800;
-  letter-spacing: 0px;
-  margin: 0;
+  letter-spacing: -2px;
 }
 @media (max-width: 767px) {
   .secondary-heading {
-    font-size: 60px;
+    font-size: 1.1em;
   }
 }
 .btn {
@@ -76,11 +80,43 @@ body {
   text-decoration: none;
   color: var(--secondary-color);
   background-color: var(--main-color);
-  padding:15px 30px;
-  margin: 20px auto;
+  font-size: 1.5em;
+  padding:20px 40px;
+  margin: 0 auto;
   text-align: center;
 }
-
+.special-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 60px;  
+  height: 60px;
+  font-size: 30px;
+  font-weight: 600;
+  z-index: 2;
+  text-decoration: none;
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+  text-align: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0;
+}
+.card-img {
+  border-radius: 50px 0 50px 0;
+}
+@media (max-width:767px){
+  .btn{
+    font-size: 1.1em;
+    padding: 15px 30px;
+  }
+  .special-btn {
+    position: absolute;
+    width: 35px;  
+    height: 35px;
+    font-size: 20px;
+  }
+}
 /* End Components */
 /* Start Header */
 header {
@@ -165,6 +201,7 @@ header .container .links ul li a {
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(100vh - 64px);
+  position: relative;
 }
 @media (max-width:1200px){
   .landing {
@@ -173,48 +210,183 @@ header .container .links ul li a {
 }
 .landing .intro-text {
   display: flex;
+  position: relative;
   justify-content: space-between;
   flex-direction: column;
   text-align: center;
-  padding:50px 0;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }
 .landing .intro-text .secondary-heading {
-  font-weight: 600;
-  font-size: 1.2em;
-  margin-bottom: 350px;
-}
-@media (max-width:992px){
-  .landing .intro-text .secondary-heading {
-    margin-bottom: 150px;
-  }
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .landing .intro-text h1 {
+  margin: auto;
   font-weight: bold;
   font-size: 100px;
   color: var(--secondary-color);
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .landing .intro-text h1 {
-    font-size: 55px;
+    font-size: 80px;
   }
 }
-
+@media (max-width: 767px) {
+  .landing .intro-text h1 {
+    font-size: 35px;
+  }
+}
+.landing .intro-text .btn {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /* END  LANDING Section */
 /* STart about section*/
 .about {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
-}
-.about .container {
-  display: flex;
- 
-}
 
-.about .container .info-text{
-  flex-direction: column;
-  flex-basis: 50%;
+}
+.about .content{
+  display: flex;
+  direction: rtl;
+  justify-content: space-around;
+  padding: 0 100px;
+}
+.about .content .info-text{
+  direction: ltr;
+}
+.about .content .info-text .special-heading{
+  text-align: left;
+  margin: 0 0 70px 0;
+}
+.about .content .info-text p{
+  overflow: hidden;
+  display: block;
+  max-width: 600px;
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.547);
+}
+.about .content .special-card{
+  position: relative;
+  direction: ltr;
+  margin: 0;
+}
+.about .content .special-card .card-img {
+  width: 100%;
+}
+.about .content .special-btn {
+  top: 50px;
+  right: -30px;
+}
+@media (max-width: 992px) {
+  .about {
+    padding-top: calc(var(--section-padding) - 20px) ;
+    padding-bottom: calc(var(--section-padding) - 20px);
+  }
+  .about .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px auto ;
+  }
+  .about .content .info-text{
+    margin-bottom: 50px;
+  }
+  .about .content .info-text .special-heading{
+    margin: 40px 0 30px 0;
+  }
+  .about .content .info-text p{
+    max-width: 500px;
+    line-height: 2.5em;
+    font-size: 1.1em;
+  }
+  
+  .about .content .special-card{
+    padding: auto;
+  }
+  .about .content .special-btn {
+    top: 50px;
+    right: -30px;
+  }
+
+}
+@media (max-width:767px){
+  .about {
+    padding-top: calc(var(--section-padding) - 40px) ;
+    padding-bottom: calc(var(--section-padding) - 40px);
+  }
+  .about .content{
+    padding: 0 20px ;
+  }
+  .about .content .info-text{
+    margin-bottom: 50px;
+  }
+  .about .content .special-btn {
+    top: 50px;
+    left: 95%;
+  }
+  .about .content .info-text .special-heading{
+    margin: 40px 0 30px 0;
+  }
 }
 /*--End about section*/
+/*  Start Work section  */
+.work {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--main-color);
+}
+@media (max-width: 992px) {
+  .work {
+    padding-top: calc(var(--section-padding) - 20px) ;
+    padding-bottom: calc(var(--section-padding) - 20px);
+  }
+}
+@media (max-width:767px){
+  .work {
+    padding-top: calc(var(--section-padding) - 40px) ;
+    padding-bottom: calc(var(--section-padding) - 40px);
+  }
+}
+.work .container .special-heading {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+.work .content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.work .container .content .project-card{
+  background-color: var(--secondary-color);
+  max-width: 20em;
+  max-height: 30em;
+  margin: 30px 30px;
+  border-radius: 10px;
+}
+.work .container .content .project-card .project-img img{
+  width: 100%;
+  height: 270px;
+  border-radius: 10px;
+}
+.work .container .content .project-card .work-title {
+  height: 70px;
+  align-items: center;
+}
+.work .container .content .project-card .work-title .special-heading{
+  color: var(--main-color);
+  font-size: 24px;
+  letter-spacing: 0px;
+  margin: 30px 20px;
+}
+
+/*  End  Work section  */
