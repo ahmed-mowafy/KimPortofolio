@@ -540,8 +540,6 @@ header .container .links ul li a {
   .contact .content .special-card{
     margin-right: 20px;
   }
-
-  
   .contact .content .info-text h2 {
     font-size: 2em;
     color: var(--main-color);
@@ -566,6 +564,9 @@ header .container .links ul li a {
   .contact .content .special-card .special-btn {
     top: 60%;
     left: -5%;
+  }
+  .contact .content .special-card .card-img {
+    width: 100%;
   }
 }
 /* End contact section */
